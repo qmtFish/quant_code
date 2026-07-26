@@ -1,0 +1,13 @@
+[2w | OLS] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_2w_ols.json (76 weeks)
+
+=======================================================
+  Evaluation: 2w | OLS
+=======================================================
+  Weeks: 76  Time: 5s
+  MSE:      0.012272
+  Rank IC:  +0.0033  std=0.1324  IC>0=48.68%
+  ICIR:     0.18
+  LS avg:   +0.0027  Win rate=55.26%  t=1.087
+  Cum LS:   1.2024
+  nDCG@5:   0.4699  @10=0.4757  @20=0.4760

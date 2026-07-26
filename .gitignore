@@ -1,0 +1,30 @@
+# 数据文件（不推送）
+data/
+
+# CatBoost 训练日志和中间文件
+catboost_info/
+
+# Jupyter checkpoint
+.ipynb_checkpoints/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# 虚拟环境
+.venv/
+venv/
+
+# 系数缓存 / 训练输出（可选保留，暂不排除）
+# coefficients/

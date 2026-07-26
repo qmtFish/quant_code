@@ -1,0 +1,13 @@
+[6m | CATBOOST] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_6m_catboost.json (90 weeks)
+
+=======================================================
+  Evaluation: 6m | CATBOOST
+=======================================================
+  Weeks: 90  Time: 184s
+  MSE:      0.006392
+  Rank IC:  +0.0533  std=0.1349  IC>0=65.56%
+  ICIR:     2.85
+  LS avg:   +0.0092  Win rate=67.78%  t=3.931
+  Cum LS:   2.2388
+  nDCG@5:   0.5108  @10=0.5018  @20=0.5026

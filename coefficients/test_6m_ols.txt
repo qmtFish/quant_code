@@ -1,0 +1,13 @@
+[6m | OLS] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_6m_ols.json (90 weeks)
+
+=======================================================
+  Evaluation: 6m | OLS
+=======================================================
+  Weeks: 90  Time: 31s
+  MSE:      0.006397
+  Rank IC:  +0.0278  std=0.1473  IC>0=55.56%
+  ICIR:     1.36
+  LS avg:   +0.0045  Win rate=56.67%  t=1.696
+  Cum LS:   1.4606
+  nDCG@5:   0.4831  @10=0.4910  @20=0.4904

@@ -1,0 +1,13 @@
+[6m | CATBOOST_GPU] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_6m_catboost_gpu.json (90 weeks)
+
+=======================================================
+  Evaluation: 6m | CATBOOST_GPU
+=======================================================
+  Weeks: 90  Time: 126s
+  MSE:      0.006248
+  Rank IC:  +0.0518  std=0.1346  IC>0=61.11%
+  ICIR:     2.78
+  LS avg:   +0.0084  Win rate=65.56%  t=3.707
+  Cum LS:   2.0886
+  nDCG@5:   0.4894  @10=0.4903  @20=0.4959

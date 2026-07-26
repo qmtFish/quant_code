@@ -1,0 +1,13 @@
+[1m | OLS] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_1m_ols.json (59 weeks)
+
+=======================================================
+  Evaluation: 1m | OLS
+=======================================================
+  Weeks: 59  Time: 5s
+  MSE:      0.022340
+  Rank IC:  -0.0011  std=0.1518  IC>0=55.93%
+  ICIR:     -0.05
+  LS avg:   +0.0018  Win rate=54.24%  t=0.581
+  Cum LS:   1.0944
+  nDCG@5:   0.4664  @10=0.4664  @20=0.4778

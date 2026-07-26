@@ -1,0 +1,16 @@
+Command: --window 180 --model ridge
+Elapsed: 25s
+
+[6m | RIDGE] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_6m_ridge.json (90 weeks)
+
+=======================================================
+  Evaluation: 6m | RIDGE
+=======================================================
+  Weeks: 90  Time: 21s
+  MSE:      0.006280
+  Rank IC:  +0.0241  std=0.1504  IC>0=53.33%
+  ICIR:     1.15
+  LS avg:   +0.0041  Win rate=55.56%  t=1.511
+  Cum LS:   1.4029
+  nDCG@5:   0.4822  @10=0.4905  @20=0.4975

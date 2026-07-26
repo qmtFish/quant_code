@@ -1,0 +1,13 @@
+[6m | LASSO] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_6m_lasso.json (90 weeks)
+
+=======================================================
+  Evaluation: 6m | LASSO
+=======================================================
+  Weeks: 90  Time: 34s
+  MSE:      0.005894
+  Rank IC:  +0.0217  std=0.1361  IC>0=53.33%
+  ICIR:     1.15
+  LS avg:   +0.0034  Win rate=54.44%  t=1.390
+  Cum LS:   1.3284
+  nDCG@5:   0.4672  @10=0.4802  @20=0.4883

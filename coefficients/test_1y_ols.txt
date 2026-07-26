@@ -1,0 +1,13 @@
+[1y | OLS] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_1y_ols.json (90 weeks)
+
+=======================================================
+  Evaluation: 1y | OLS
+=======================================================
+  Weeks: 90  Time: 66s
+  MSE:      0.006299
+  Rank IC:  +0.0253  std=0.1437  IC>0=55.56%
+  ICIR:     1.27
+  LS avg:   +0.0026  Win rate=56.67%  t=1.067
+  Cum LS:   1.2360
+  nDCG@5:   0.4620  @10=0.4786  @20=0.4830

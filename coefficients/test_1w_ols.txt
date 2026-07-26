@@ -1,0 +1,2 @@
+[1w | OLS] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_1w_ols.json (0 weeks)

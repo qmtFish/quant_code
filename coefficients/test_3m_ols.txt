@@ -1,0 +1,13 @@
+[3m | OLS] Loading data... 483717 rows, 94 weeks
+  -> C:\Users\Cat\Desktop\code\coefficients/test_3m_ols.json (90 weeks)
+
+=======================================================
+  Evaluation: 3m | OLS
+=======================================================
+  Weeks: 90  Time: 15s
+  MSE:      0.009301
+  Rank IC:  -0.0038  std=0.1554  IC>0=53.33%
+  ICIR:     -0.17
+  LS avg:   +0.0000  Win rate=52.22%  t=0.001
+  Cum LS:   0.9687
+  nDCG@5:   0.4456  @10=0.4529  @20=0.4627

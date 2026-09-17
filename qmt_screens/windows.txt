@@ -1,0 +1,215 @@
+﻿4195204	pid=18676	vis=False	[244,10 142x98]	XtItClient
+5702194	pid=18676	vis=False	[160,29 118x214]	XtItClient
+66312	pid=11020	vis=False	[0,0 14x14]	电池指示器
+263860	pid=11020	vis=False	[2203,1238 234x154]	系统托盘溢出窗口。
+264266	pid=16008	vis=False	[1644,484 40x27]	关闭
+198892	pid=16008	vis=False	[535,1251 980x141]	桌面歌词 - 酷狗音乐
+132336	pid=12912	vis=False	[0,0 800x800]	SonicMapperOSD
+66802	pid=4728	vis=False	[0,0 5x5]	 
+5507104	pid=18676	vis=True	[-32000,-32000 160x28]	QMT_READ_LOCAL-策略编辑器
+459690	pid=10472	vis=True	[338,0 2229x1399]	JupyterLab - Google Chrome
+4851596	pid=18676	vis=False	[945,406 650x500]	高级查询
+7145974	pid=18676	vis=False	[853,364 854x664]	系统设置
+21432660	pid=18676	vis=False	[1880,98 134x24]	XtItClient
+8325178	pid=18676	vis=False	[1937,169 260x216]	XtItClient
+3737956	pid=18676	vis=False	[1937,142 260x216]	XtItClient
+460992	pid=18676	vis=False	[1264,719 400x160]	查找
+4065208	pid=18676	vis=False	[733,10 1484x1386]	QMT_READ_LOCAL-策略编辑器
+395246	pid=18676	vis=False	[2260,1172 280x180]	XtItClient
+67560	pid=18676	vis=False	[2240,1150 330x240]	上次登录信息提示
+264110	pid=18676	vis=True	[0,0 2560x1392]	8890824816 - 国金证券QMT交易端 2.1.19.0
+7145464	pid=10472	vis=True	[-2560,0 1707x1067]	【天才简史-黎曼】悬赏100万美元的“黎曼猜想”有多难？听懂就已经很难了！_哔哩哔哩_bilibili - Google Chrome
+525086	pid=30672	vis=False	[0,0 136x39]	WUIconWindow
+2033314	pid=18664	vis=False	[0,0 0x0]	.NET-BroadcastEventWindow.bf7771.0
+852622	pid=7840	vis=False	[0,0 0x0]	DDE Server Window
+8260048	pid=7840	vis=False	[0,0 136x39]	Windows Terminal
+393252	pid=30372	vis=False	[0,0 1x1]	DesktopWindowXamlSource
+67720	pid=23984	vis=False	[0,0 2519x1392]	飞书
+590532	pid=6084	vis=False	[1758,648 66x98]	Weixin
+1574454	pid=6084	vis=False	[905,363 897x650]	微信
+133500	pid=16008	vis=False	[0,0 372x406]	消息中心
+657638	pid=16008	vis=False	[0,0 340x540]	传歌到设备
+329942	pid=16008	vis=False	[267,414 1422x720]	张雨生 - 再见  兰花草 - 酷狗音乐 
+786464	pid=11020	vis=False	[0,0 1x1]	DesktopWindowXamlSource
+11733092	pid=16008	vis=False	[182,182 320x240]	ActiveMovie Window
+395638	pid=16008	vis=False	[523,494 909x559]	手机传歌
+67952	pid=16008	vis=False	[-860,-7 7x7]	张雨生 - 再见  兰花草 - 酷狗音乐 
+67896	pid=25732	vis=False	[234,234 1920x1023]	AsyncDNSWindow
+133260	pid=7236	vis=False	[0,0 0x0]	Binding
+656318	pid=6084	vis=False	[1192,585 176x199]	Weixin
+262250	pid=18676	vis=False	[971,564 598x185]	XtItClient
+328622	pid=6084	vis=False	[0,48 160x112]	Weixin
+721808	pid=7808	vis=False	[26,26 1920x1023]	SoftwareMonitor
+393954	pid=17552	vis=False	[0,0 0x0]	DDE Server Window
+394778	pid=17552	vis=False	[0,0 136x39]	OfficePowerManagerWindow
+656560	pid=7812	vis=False	[260,260 640x480]	PowerMonitorHiddenWindow
+67382	pid=6084	vis=False	[1192,585 176x199]	Weixin
+393400	pid=6084	vis=False	[182,182 1920x1023]	WxTrayIconMessageWindow
+1442338	pid=11716	vis=False	[930,446 700x500]	联想PDF
+590382	pid=11716	vis=False	[0,0 1x1]	GDI+ Window (fastpdf.exe)
+328022	pid=5804	vis=False	[0,0 0x0]	.NET-BroadcastEventWindow.4.0.0.0.3b95145.0
+262300	pid=22252	vis=False	[0,0 1x1]	GDI+ Window (webpiclaunch.exe)
+132308	pid=8216	vis=True	[0,33 720x489]	Nahimic
+132292	pid=23104	vis=True	[912,447 736x530]	Nahimic
+198228	pid=21944	vis=False	[208,208 1920x1023]	PrivoxyTrayWindow
+197804	pid=21944	vis=False	[182,182 1920x1023]	Privoxy
+327710	pid=21944	vis=False	[156,156 1920x1023]	PrivoxyLogOwner
+67228	pid=2100	vis=False	[0,0 0x0]	DDE Server Window
+67210	pid=2100	vis=False	[0,0 0x0]	.NET-BroadcastEventWindow.4.0.0.0.13fa1bf.0
+263512	pid=23448	vis=False	[0,0 1x1]	Temp Window
+132700	pid=11976	vis=False	[0,0 0x0]	Microsoft OneNote - Windows 任务栏
+394816	pid=11976	vis=False	[0,0 1x1]	GDI+ Window (ONENOTEM.EXE)
+132714	pid=23448	vis=False	[130,130 993x519]	C:\Users\Cat\AppData\Local\Programs\Ollama\ollama.exe
+132682	pid=18576	vis=False	[0,0 0x0]	MediaContextNotificationWindow
+132668	pid=18576	vis=False	[0,0 1x1]	GDI+ Window (Shadowsocks.exe)
+132580	pid=18576	vis=False	[0,0 0x0]	.NET-BroadcastEventWindow.4.0.0.0.3917f2.0
+67086	pid=22668	vis=False	[0,0 0x0]	RealtekAudioBackgroundProcessClass
+197786	pid=23020	vis=False	[0,0 0x0]	SecurityHealthSystray
+67068	pid=20364	vis=False	[-118,-141 136x49]	X-Rite Color Assistant
+67050	pid=20364	vis=False	[286,286 1920x1023]	QTrayIconMessageWindow
+132364	pid=20364	vis=False	[208,208 1920x1023]	XRRunLoopWindow
+66908	pid=17952	vis=False	[130,130 14x14]	LZTray-{4B82EA50-B09D-4531-A0BE-71A0DFE3ACA2}
+66906	pid=17952	vis=False	[104,104 1920x1023]	Hidden Window
+66900	pid=20680	vis=True	[0,0 2560x1440]	Windows 输入体验
+66876	pid=20412	vis=False	[590,261 1380x870]	LegionZone
+66860	pid=17952	vis=False	[0,0 0x0]	MediaContextNotificationWindow
+66846	pid=17952	vis=False	[0,0 0x0]	SystemResourceNotifyWindow
+66812	pid=17952	vis=False	[0,0 136x39]	LZTray-LOE-{4B82EA50-B09D-4531-A0BE-71A0DFE3ACA2}
+66796	pid=4728	vis=False	[0,0 1x1]	GDI+ Window (GAHighlight.exe)
+66792	pid=17952	vis=False	[0,0 0x0]	.NET-BroadcastEventWindow.4.0.0.0.3ee13a2.0
+66784	pid=4728	vis=False	[0,0 136x39]	MediaPlayer SMTC window - {CE309C13-016B-4D95-B146-4A10425B17EA}
+66700	pid=18328	vis=False	[260,260 1920x1023]	FNForMonitorMic
+66692	pid=17952	vis=False	[0,0 136x39]	SystemEventMonitor
+66688	pid=17952	vis=False	[0,0 136x39]	SystemEventMonitor
+328792	pid=8844	vis=False	[0,0 136x39]	LeAppStoreTrayWnd
+132200	pid=18328	vis=False	[0,0 1x1]	GDI+ Window (FnHotkeyUtility.exe)
+262318	pid=18328	vis=False	[182,182 1920x1023]	FnHotkeyUtility
+66654	pid=18156	vis=False	[156,156 1920x1023]	Fn_Hotkey_CapsLKNumLK
+66612	pid=7936	vis=False	[130,130 1920x1023]	NvSvc
+131234	pid=7936	vis=False	[104,104 1920x1023]	UxdService
+66594	pid=13988	vis=False	[78,78 1920x1023]	X8V2Xrc51
+131438	pid=13988	vis=False	[0,0 136x39]	CMsgWnd
+131446	pid=13988	vis=False	[0,0 136x39]	LenovoTray
+263034	pid=13988	vis=False	[338,338 1920x1023]	ProtectMain
+66400	pid=13988	vis=False	[0,0 136x39]	LenovoBlockTray
+66392	pid=11020	vis=False	[312,312 1920x1023]	MS_WebcheckMonitor
+393874	pid=11020	vis=False	[0,0 136x39]	BluetoothNotificationAreaIconWindowClass
+66374	pid=11020	vis=False	[0,0 136x39]	MiracastConnectionWindow
+131890	pid=14784	vis=False	[0,0 136x39]	lse__host__hide
+66338	pid=14520	vis=False	[260,260 400x300]	Title
+131314	pid=13068	vis=False	[0,0 0x0]	.NET-BroadcastEventWindow.21af1a5.0
+131764	pid=13964	vis=False	[0,0 136x39]	lse__host__hide
+197000	pid=10340	vis=False	[0,0 136x39]	lse__host__hide
+66062	pid=10340	vis=False	[156,156 136x39]	Monitor Hotplug Detector
+65996	pid=11700	vis=False	[130,130 1920x1023]	CrossDeviceResumeWindow
+131114	pid=10088	vis=False	[0,0 0x0]	Windows Push Notifications Platform
+131120	pid=10164	vis=False	[0,0 136x39]	Task Host Window
+65640	pid=7936	vis=False	[0,0 0x0]	NvContainerWindowClass00001F00
+131140	pid=1680	vis=False	[0,1561 237x39]	DWM Notification Window
+4393398	pid=7840	vis=True	[-32000,-32000 160x28]	npm prefix
+65898	pid=11020	vis=True	[-2560,0 5120x1600]	Program Manager
+66076	pid=11020	vis=False	[0,0 0x0]	Default IME
+66368	pid=11020	vis=False	[0,0 0x0]	Default IME
+67902	pid=16008	vis=False	[0,0 0x0]	MSCTFIME UI
+264494	pid=16008	vis=False	[0,0 0x0]	Default IME
+327850	pid=12912	vis=False	[0,0 0x0]	Default IME
+66952	pid=17952	vis=False	[200,200 200x200]	CiceroUIWndFrame
+66804	pid=4728	vis=False	[0,0 0x0]	Default IME
+66712	pid=18328	vis=False	[0,0 0x0]	MSCTFIME UI
+196800	pid=18328	vis=False	[0,0 0x0]	Default IME
+263144	pid=10472	vis=False	[0,0 0x0]	MSCTFIME UI
+918456	pid=10472	vis=False	[0,0 0x0]	Default IME
+67244	pid=6084	vis=False	[0,0 0x0]	MSCTFIME UI
+328534	pid=6084	vis=False	[0,0 0x0]	Default IME
+1705772	pid=18676	vis=False	[0,0 0x0]	MSCTFIME UI
+853364	pid=18676	vis=False	[0,0 0x0]	Default IME
+262838	pid=30672	vis=False	[0,0 0x0]	Default IME
+723516	pid=11020	vis=False	[0,0 0x0]	Default IME
+656918	pid=11020	vis=False	[0,0 0x0]	MSCTFIME UI
+65960	pid=11020	vis=False	[0,0 0x0]	Default IME
+1116650	pid=18664	vis=False	[0,0 0x0]	Default IME
+67732	pid=23984	vis=False	[0,0 0x0]	MSCTFIME UI
+133236	pid=23984	vis=False	[0,0 0x0]	Default IME
+1247684	pid=14220	vis=False	[0,0 0x0]	Default IME
+4392908	pid=16008	vis=False	[0,0 0x0]	Default IME
+3344496	pid=16008	vis=False	[0,0 0x0]	Default IME
+395272	pid=29768	vis=False	[0,0 0x0]	Default IME
+1050870	pid=29876	vis=False	[0,0 0x0]	Default IME
+67898	pid=25732	vis=False	[0,0 0x0]	Default IME
+67858	pid=16008	vis=False	[0,0 0x0]	Default IME
+264302	pid=7236	vis=False	[0,0 0x0]	Default IME
+133290	pid=24588	vis=False	[0,0 0x0]	Default IME
+67782	pid=23956	vis=False	[0,0 0x0]	Default IME
+329610	pid=21228	vis=False	[0,0 0x0]	MSCTFIME UI
+198546	pid=21228	vis=False	[0,0 0x0]	Default IME
+1114244	pid=8772	vis=False	[0,0 0x0]	Default IME
+787310	pid=22944	vis=False	[0,0 0x0]	Default IME
+132052	pid=1852	vis=False	[0,0 0x0]	Default IME
+656926	pid=7808	vis=False	[0,0 0x0]	Default IME
+460446	pid=17552	vis=False	[0,0 0x0]	Default IME
+983684	pid=7812	vis=False	[0,0 0x0]	Default IME
+67336	pid=4636	vis=False	[0,0 0x0]	Default IME
+67312	pid=5260	vis=False	[0,0 0x0]	Default IME
+984628	pid=6068	vis=False	[0,0 0x0]	Default IME
+131704	pid=11716	vis=False	[0,0 0x0]	Default IME
+263194	pid=5804	vis=False	[0,0 0x0]	Default IME
+196756	pid=22252	vis=False	[0,0 0x0]	Default IME
+198252	pid=8216	vis=False	[0,0 0x0]	Default IME
+197838	pid=11020	vis=False	[0,0 0x0]	Default IME
+132258	pid=23104	vis=False	[0,0 0x0]	Default IME
+131306	pid=21944	vis=False	[0,0 0x0]	Default IME
+132754	pid=2100	vis=False	[0,0 0x0]	Default IME
+67212	pid=2100	vis=False	[0,0 0x0]	Default IME
+132726	pid=23448	vis=False	[0,0 0x0]	Default IME
+263770	pid=11976	vis=False	[0,0 0x0]	Default IME
+132710	pid=11976	vis=False	[0,0 0x0]	Default IME
+132680	pid=23384	vis=False	[0,0 0x0]	Default IME
+132614	pid=23480	vis=False	[0,0 0x0]	Default IME
+132576	pid=18576	vis=False	[0,0 0x0]	Default IME
+132582	pid=18576	vis=False	[0,0 0x0]	Default IME
+67088	pid=22668	vis=False	[0,0 0x0]	Default IME
+197898	pid=23020	vis=False	[0,0 0x0]	Default IME
+197222	pid=20364	vis=False	[0,0 0x0]	MSCTFIME UI
+132426	pid=20364	vis=False	[0,0 0x0]	Default IME
+197768	pid=12912	vis=False	[0,0 0x0]	Default IME
+132324	pid=22140	vis=False	[0,0 0x0]	Default IME
+66944	pid=20892	vis=False	[0,0 0x0]	Default IME
+66950	pid=17952	vis=False	[0,0 0x0]	CiceroUIWndFrame
+132464	pid=17952	vis=False	[0,0 0x0]	MSCTFIME UI
+131676	pid=17952	vis=False	[0,0 0x0]	Default IME
+66902	pid=20680	vis=False	[0,0 0x0]	Default IME
+66852	pid=20412	vis=False	[0,0 0x0]	Default IME
+66878	pid=20412	vis=False	[0,0 0x0]	MSCTFIME UI
+66840	pid=20568	vis=False	[0,0 0x0]	Default IME
+66798	pid=4728	vis=False	[0,0 0x0]	Default IME
+66794	pid=17952	vis=False	[0,0 0x0]	Default IME
+66786	pid=4728	vis=False	[0,0 0x0]	Default IME
+66730	pid=17952	vis=False	[0,0 0x0]	Default IME
+66694	pid=17952	vis=False	[0,0 0x0]	Default IME
+66690	pid=17952	vis=False	[0,0 0x0]	Default IME
+66678	pid=18872	vis=False	[0,0 0x0]	Default IME
+66668	pid=18328	vis=False	[0,0 0x0]	Default IME
+66662	pid=18156	vis=False	[0,0 0x0]	Default IME
+132176	pid=17804	vis=False	[0,0 0x0]	Default IME
+131440	pid=16556	vis=False	[0,0 0x0]	Default IME
+131416	pid=14220	vis=False	[0,0 0x0]	Default IME
+66380	pid=11020	vis=False	[0,0 0x0]	Default IME
+66358	pid=14784	vis=False	[0,0 0x0]	Default IME
+66340	pid=14520	vis=False	[0,0 0x0]	Default IME
+66302	pid=11020	vis=False	[0,0 0x0]	Default IME
+66280	pid=8096	vis=False	[0,0 0x0]	Default IME
+197278	pid=15352	vis=False	[0,0 0x0]	Default IME
+66252	pid=15352	vis=False	[0,0 0x0]	MSCTFIME UI
+197272	pid=14544	vis=False	[0,0 0x0]	Default IME
+131342	pid=13068	vis=False	[0,0 0x0]	Default IME
+131762	pid=13964	vis=False	[0,0 0x0]	Default IME
+66112	pid=10340	vis=False	[0,0 0x0]	Default IME
+66064	pid=10340	vis=False	[0,0 0x0]	Default IME
+65998	pid=11700	vis=False	[0,0 0x0]	Default IME
+65892	pid=11020	vis=False	[0,0 0x0]	Default IME
+131112	pid=10088	vis=False	[0,0 0x0]	Default IME
+65956	pid=11020	vis=False	[0,0 0x0]	MSCTFIME UI
+131096	pid=11020	vis=False	[0,0 0x0]	Default IME
+787232	pid=7840	vis=False	[0,0 0x0]	MSCTFIME UI
+722642	pid=7840	vis=False	[0,0 0x0]	Default IME
+

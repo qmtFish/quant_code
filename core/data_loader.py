@@ -17,8 +17,8 @@ import pandas as pd
 import numpy as np
 import json
 
-from pipeline.config import DATA_DIR, COEF_DIR
-from pipeline.factor_config import FACTOR_COLS
+from config import DATA_DIR, COEF_DIR, DATA_PATH
+from factor_config import FACTOR_COLS, available_factor_cols
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -42,6 +42,8 @@ def load_factor_csv(path: str = None, mode: str = 'train') -> pd.DataFrame:
     pd.DataFrame
     """
     print(f"  [数据] 加载 {path}")
+    if path is None:
+        path = DATA_PATH  # config 中的统一训练数据路径
     df = pd.read_csv(path)
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values(['date', 'code']).reset_index(drop=True)
@@ -65,8 +67,12 @@ def load_pred_factor_csv(path: str = None) -> pd.DataFrame:
 
 
 def get_available_factor_cols(df: pd.DataFrame) -> List[str]:
-    """从 DataFrame 中自动识别因子列"""
-    return [c for c in FACTOR_COLS if c in df.columns]
+    """从 DataFrame 中自动识别因子列。
+
+    以数据实际包含的列为基础，自动剔除会 leak 的列
+    （fwd_*/up_*/rank_* 未来信息）与非因子列（date/code/industry/next_ret）。
+    """
+    return available_factor_cols(df.columns)
 
 
 def filter_by_date(df: pd.DataFrame, start_date: str = None,
@@ -261,7 +267,7 @@ def get_prices_from_csv(df: pd.DataFrame, date: date) -> Dict[str, float]:
     此函数仅用于信号生成等场景。
     """
     # 回退到从 daily parquet 获取
-    from pipeline.core.data_loader import load_daily
+    from core.data_loader import load_daily
     try:
         daily = load_daily(str(date), str(date))
         dt = pd.Timestamp(date)

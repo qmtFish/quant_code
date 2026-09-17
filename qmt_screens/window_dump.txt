@@ -1,0 +1,8 @@
+﻿==== TOP-LEVEL WINDOWS ====
+
+==== UIA TREE pid=18676 ====
+-- window: QMT_READ_LOCAL-策略编辑器 [Pane] rect=Empty
+  Pane | id= | class=Qt5QWindowIcon | name=QMT_READ_LOCAL-策略编辑器
+-- window: 8890824816 - 国金证券QMT交易端 2.1.19.0 [Pane] rect=0,0,2560,1392
+  Pane | id= | class=Qt5QWindowIcon | name=8890824816 - 国金证券QMT交易端 2.1.19.0
+

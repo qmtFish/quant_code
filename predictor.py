@@ -2,7 +2,7 @@
 批预测模块 —— 对一段时间内的每个交易日进行预测，输出 JSON。
 
 用法:
-    from pipeline.predictor import run_batch_predict
+    from predictor import run_batch_predict
 
     run_batch_predict(
         start_date='2026-05-01',
@@ -12,7 +12,7 @@
     )
 
 命令行:
-    python -m pipeline.predictor --start 2026-05-01 --end 2026-06-12
+    python -m predictor --start 2026-05-01 --end 2026-06-12
 """
 from __future__ import annotations
 import sys, json, time
@@ -23,9 +23,9 @@ import pandas as pd
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from pipeline.model import FactorModel
-from pipeline.core.data_loader import load_factor_csv
-from pipeline.config import DATA_PATH, COEF_DIR
+from model import FactorModel
+from core.data_loader import load_factor_csv
+from config import DATA_PATH, COEF_DIR
 
 
 def run_batch_predict(
@@ -77,6 +77,8 @@ def run_batch_predict(
         }
     """
     # ── 自动选择系数文件 ──
+    if input_path is None:
+        input_path = DATA_PATH  # config 中的统一数据路径（含 next_ret 的完整训练集）
     if coef_path is None:
         if model_type:
             matched = sorted(f for f in Path(COEF_DIR).glob(f'*{model_type}*.json')

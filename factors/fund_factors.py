@@ -1,46 +1,45 @@
 """
-基本面因子插件。
-参考 factor_builder.py 中的 fundamental 部分。
+基本面因子（原始财务列透传 + 衍生因子）。
+
+透传: pe_ratio, pb_ratio, ps_ratio, pcf_ratio, market_cap,
+      circulating_market_cap, roe, roa, gross_profit_margin,
+      net_profit_margin, inc_revenue_year_on_year, inc_net_profit_year_on_year
+衍生: size_log         对数市值
+      earnings_yield   盈利收益率 1/PE（仅 PE>0）
+      book_to_price    市净率的倒数 1/PB（仅 PB>0）
+      revenue_yield    市销率的倒数 1/PS（仅 PS>0）
+      cashflow_yield   市现率的倒数 1/PCF（仅 PCF>0）
+      peg              PE / 净利润同比增速（PE>0 且增速>0）
 """
-from typing import List, Dict
-import pandas as pd
+from __future__ import annotations
+
 import numpy as np
+import pandas as pd
+
+PASSTHROUGH = [
+    'pe_ratio', 'pb_ratio', 'ps_ratio', 'pcf_ratio',
+    'market_cap', 'circulating_market_cap', 'roe', 'roa',
+    'gross_profit_margin', 'net_profit_margin',
+    'inc_revenue_year_on_year', 'inc_net_profit_year_on_year',
+]
 
 
-def compute(date: pd.Timestamp,
-            stocks: List[str],
-            daily: pd.DataFrame,
-            financial: pd.DataFrame,
-            index: Dict[str, pd.DataFrame],
-            industry: pd.DataFrame) -> pd.DataFrame:
-    """
-    计算估值 + 盈利能力 + 成长类基本面因子。
+def compute(df: pd.DataFrame) -> pd.DataFrame:
+    """df: 全市场原始长表, index=[date, code]; 返回同 index 的因子表。"""
+    result = pd.DataFrame(index=df.index)
 
-    返回列:
-        pe_ratio, pb_ratio, ps_ratio, pcf_ratio,
-        market_cap, roe, roa,
-        gross_profit_margin, net_profit_margin,
-        inc_revenue_yoy, inc_net_profit_yoy
-    """
-    # 取最新的财务数据（小于等于 date 的最新报告期）
-    fin = financial.reset_index()
-    fin = fin[fin['report_date'] <= pd.Timestamp(date)]
-    fin = fin.loc[fin.groupby('code')['report_date'].idxmax()]  # 每只股票取最新一期
-    fin = fin[fin['code'].isin(stocks)].set_index('code')
+    for col in PASSTHROUGH:
+        if col in df.columns:
+            result[col] = df[col]
 
-    if fin.empty:
-        return pd.DataFrame(index=stocks)
+    result['size_log'] = np.log(df['market_cap'])
+    result['earnings_yield'] = 1.0 / df['pe_ratio'].where(df['pe_ratio'] > 0)
+    result['book_to_price'] = 1.0 / df['pb_ratio'].where(df['pb_ratio'] > 0)
+    result['revenue_yield'] = 1.0 / df['ps_ratio'].where(df['ps_ratio'] > 0)
+    result['cashflow_yield'] = 1.0 / df['pcf_ratio'].where(df['pcf_ratio'] > 0)
 
-    # 选择需要的列
-    fund_cols = ['pe_ratio', 'pb_ratio', 'ps_ratio', 'pcf_ratio',
-                 'market_cap', 'roe', 'roa',
-                 'gross_profit_margin', 'net_profit_margin',
-                 'inc_revenue_yoy', 'inc_net_profit_yoy']
+    pe = df['pe_ratio']
+    growth = df['inc_net_profit_year_on_year']
+    result['peg'] = (pe / growth).where((pe > 0) & (growth > 0))
 
-    available = [c for c in fund_cols if c in fin.columns]
-    result = fin[available].copy()
-
-    # 填充缺失值
-    result = result.fillna(0)
-
-    return result
+    return result.astype('float64')

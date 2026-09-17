@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent  # code/
+ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / 'data' / 'all_data'
 FACTOR_DIR = ROOT / 'data' / 'factors'
 RESULT_DIR = ROOT / 'results'
@@ -57,7 +57,8 @@ TOP_K = 10                   # 全局选股数量
 # ════════════════════════════════════════════
 # 统一数据路径
 # ════════════════════════════════════════════
-DATA_PATH = str(DATA_DIR / 'local_train_data_2024-06-29_2026-06-29.csv')
+# factor_data(特征+industry) + label_data(next_ret) 合并产物，见 scripts/merge_factor_label.py
+DATA_PATH = str(ROOT / 'data' / 'all_processed_data' / 'train_data_2023-07-17_2026-07-24.csv')
 
 # 权重文件路径
 WEIGHT_FILE = str(COEF_DIR / 'factor_coefficients_6m_rolling.json')

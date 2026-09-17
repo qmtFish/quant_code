@@ -1,10 +1,10 @@
 """
-统一因子模型 —— 动态加载 pipeline/models/ 下的模型插件。
+统一因子模型 —— 动态加载 models/ 下的模型插件。
 
 支持的模型由 models/ 目录下的文件决定（当前: ols, ridge, lasso, rf, catboost）。
 
 用法:
-    from pipeline.model import FactorModel
+    from model import FactorModel
 
     model = FactorModel({'window': 180, 'model_type': 'catboost'})
     model.train(df)
@@ -19,8 +19,8 @@ import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr, zscore
 
-from pipeline.config import COEF_DIR
-from pipeline.factor_config import FACTOR_COLS as DEFAULT_FACTOR_COLS
+from config import COEF_DIR
+from factor_config import FACTOR_COLS as DEFAULT_FACTOR_COLS
 
 # ── 缓存已加载的模型模块 ──
 _model_cache = {}
@@ -30,7 +30,7 @@ def _load_model_module(model_type: str):
     """动态加载 pipeline.models.{model_type} 模块"""
     if model_type not in _model_cache:
         _model_cache[model_type] = importlib.import_module(
-            f'pipeline.models.{model_type}'
+            f'models.{model_type}'
         )
     return _model_cache[model_type]
 
@@ -176,7 +176,7 @@ class FactorModel:
             model_type: 模型类型，用于 PKL 预测时加载正确的模块。
                         默认从 JSON 元数据读取，回退到 self.model_type。
         """
-        from pipeline.core.data_loader import load_latest_coefficients
+        from core.data_loader import load_latest_coefficients
 
         # ── 确定使用的模型类型 ──
         if model_type is None and coef_path and Path(coef_path).exists():

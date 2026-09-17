@@ -1,85 +1,72 @@
 """
-市场/行业因子插件。
-参考 factor_builder.py 中的 market factors 部分。
+市场/行业因子。
+
+指数因子: hs300 / zz500 的 5、20 日收益率（从原始列 hs300_close / zz500_close 计算）。
+行业因子: 按 industry 列等权合成行业日收益，再计算
+          ind_ret_5d / ind_ret_20d   行业 5、20 日收益率
+          ind_vol_20d                行业 20 日收益波动率
+          ind_alpha_20d              行业 20 日收益 - hs300 20 日收益
+
+注意: 行业归属取每只股票最后一条记录的分类（认为基本不变）。
 """
-from typing import List, Dict
-import pandas as pd
+from __future__ import annotations
+
 import numpy as np
+import pandas as pd
 
 
-def compute(date: pd.Timestamp,
-            stocks: List[str],
-            daily: pd.DataFrame,
-            financial: pd.DataFrame,
-            index: Dict[str, pd.DataFrame],
-            industry: pd.DataFrame) -> pd.DataFrame:
-    """
-    计算市场/行业因子。
+def compute(df: pd.DataFrame) -> pd.DataFrame:
+    """df: 全市场原始长表, index=[date, code]; 返回同 index 的因子表。"""
+    result = pd.DataFrame(index=df.index)
+    dates = df.index.get_level_values('date')
+    codes = df.index.get_level_values('code')
 
-    返回列:
-        ind_ret_5d, ind_ret_20d, ind_vol_20d, ind_alpha_20d,
-        hs300_ret_5d, hs300_ret_20d,
-        zz500_ret_5d, zz500_ret_20d,
-        size_log_z
-    """
-    result = pd.DataFrame(index=stocks)
-
-    # --- 指数收益率 ---
-    for idx_name, periods in [('hs300', [5, 20]), ('zz500', [5, 20])]:
-        idx_df = index.get(idx_name)
-        if idx_df is None or idx_df.empty:
+    # ---- 指数收益率（同一交易日所有股票相同）----
+    for idx_name in ('hs300', 'zz500'):
+        col = f'{idx_name}_close'
+        if col not in df.columns:
             continue
-        idx_close = idx_df['close']
-        idx_close = idx_close[idx_close.index <= pd.Timestamp(date)]
+        close_by_date = df[col].groupby(level='date').first()
+        for period in (5, 20):
+            result[f'{idx_name}_ret_{period}d'] = _map_by_date(
+                close_by_date.pct_change(period), dates)
 
-        for p in periods:
-            label = f'{idx_name}_ret_{p}d'
-            if len(idx_close) >= p:
-                result[label] = (idx_close.iloc[-1] / idx_close.iloc[-p] - 1)
-            else:
-                result[label] = 0.0
+    # ---- 行业因子 ----
+    stock_ret = df['close'].groupby(level='code').pct_change()  # 个股日收益
 
-    # --- 行业收益率 ---
-    # 取 date 前 60 日日线
-    hist = daily.loc[:date].tail(60).copy()
-    if hist.empty:
-        result['ind_ret_20d'] = 0.0
-        result['ind_vol_20d'] = 0.0
-        result['ind_alpha_20d'] = 0.0
-        return result.fillna(0)
+    industry = df['industry'].groupby(level='code').last()       # code -> industry
+    ind_of_stock = industry.reindex(codes).to_numpy()
 
-    hist = hist[hist.index.get_level_values('code').isin(stocks)]
-    close = hist['close'].unstack('code')
-    ret = close.pct_change().fillna(0)
-    n = len(close)
+    tmp = pd.DataFrame({
+        'date': dates,
+        'industry': ind_of_stock,
+        'ret': stock_ret.to_numpy(),
+    })
+    ind_daily = tmp.groupby(['date', 'industry'], as_index=False)['ret'].mean()
+    ind_wide = ind_daily.pivot(index='date', columns='industry', values='ret')
 
-    # 行业分类映射
-    if industry is not None and 'industry_code' in industry.columns:
-        ind_map = industry['industry_code'].to_dict()
-    else:
-        ind_map = {}
+    ind_ret5 = (1 + ind_wide).rolling(5).apply(np.prod, raw=True) - 1
+    ind_ret20 = (1 + ind_wide).rolling(20).apply(np.prod, raw=True) - 1
+    ind_vol20 = ind_wide.rolling(20).std()
 
-    # 简单等权全市场平均收益率作为行业收益率近似
-    # 更精确做法：按行业分组计算
-    if n >= 20:
-        ind_ret_ts = ret.iloc[-20:].mean(axis=1)  # 每日全市场平均
-        result['ind_ret_20d'] = (1 + ind_ret_ts).prod() - 1
-        result['ind_vol_20d'] = ind_ret_ts.std()
+    pairs = pd.MultiIndex.from_arrays([dates, ind_of_stock])
+    result['ind_ret_5d'] = _map_by_pair(ind_ret5, pairs)
+    result['ind_ret_20d'] = _map_by_pair(ind_ret20, pairs)
+    result['ind_vol_20d'] = _map_by_pair(ind_vol20, pairs)
 
-        # alpha = 行业收益率 - hs300收益率
-        hs300_close = index.get('hs300', pd.DataFrame()).get('close', pd.Series(dtype=float))
-        if not hs300_close.empty:
-            hs300_close = hs300_close[hs300_close.index <= pd.Timestamp(date)]
-            if len(hs300_close) >= 20:
-                hs300_ret_20d = hs300_close.iloc[-1] / hs300_close.iloc[-20] - 1
-                result['ind_alpha_20d'] = result['ind_ret_20d'] - hs300_ret_20d
-            else:
-                result['ind_alpha_20d'] = 0.0
-        else:
-            result['ind_alpha_20d'] = 0.0
-    else:
-        result['ind_ret_20d'] = 0.0
-        result['ind_vol_20d'] = 0.0
-        result['ind_alpha_20d'] = 0.0
+    if 'hs300_ret_20d' in result.columns:
+        result['ind_alpha_20d'] = result['ind_ret_20d'] - result['hs300_ret_20d']
 
-    return result.fillna(0)
+    return result.astype('float64')
+
+
+def _map_by_date(s: pd.Series, dates: pd.Index) -> np.ndarray:
+    """按日期把 Series 的值映射回每一行。"""
+    return s.reindex(dates).to_numpy()
+
+
+def _map_by_pair(s, pairs: pd.MultiIndex) -> np.ndarray:
+    """按 (date, industry) 对把 Series 的值映射回每一行。"""
+    if isinstance(s, pd.DataFrame):
+        s = s.stack()
+    return s.reindex(pairs).to_numpy()

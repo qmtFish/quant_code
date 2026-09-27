@@ -75,6 +75,8 @@ def compute_labels(df: pd.DataFrame, horizons: Sequence[int] = (1, 3, 5, 10),
     result = pd.DataFrame(index=df.index)
     close = df['close']
 
+    print("close head", close.head())
+
     for n in horizons:
         # 未来 N 日收益率：按股票分组把 close 前移 N 行
         fwd_close = close.groupby(level='code').shift(-n)
